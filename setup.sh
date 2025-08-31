@@ -1,15 +1,17 @@
 #!/bin/bash
+set -e
+
 #Creat a Docker Network for Jenkins
 echo -e "Creating Network For Jenkins:"
 docker network create jenkins
 echo -e "\n"
 
-#Build Custom Docker Image for Jenkins.
+#Build Custom Docker Image for Jenkins
 echo -e "Building Image:"
 docker build -t jenkins-blueocean .
 echo -e "\n"
 
-#Run the Build Image.
+#Run the Build Image
 echo -e "Running Image:"
 docker run \
   --name jenkins-blueocean \
@@ -30,7 +32,7 @@ echo -e "Setting Up..."
 sleep 20
 echo -e "\n"
 
-#Done.
+#Done
 echo -e "Jenkins Running on: http://localhost:8080"
 echo -e "\n"
 echo -e "Admin Password:"
